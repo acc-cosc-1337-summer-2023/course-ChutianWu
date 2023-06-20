@@ -12,17 +12,21 @@ using std::string;
 int main() 
 {
 	std::string content;
-	cout<<"Please enter a DNA string: ";
-	cin>>content;
-
-	if ((content != "y") and (content !="Y"))
+	std::string proceed;
+	cout<<"Do you want to run the program? Please press y or Y to proceed: ";
+	cin>>proceed;
+	
+	while ((proceed == "y") or (proceed == "Y"))
 	{
+		cout<<"Please enter a DNA string: ";
+		cin>>content;
+
 		double result = get_gc_content(content);
 		cout<<"The percentage of Cs and Gs is: "<<result<<"\n";
+
+		cout<<"Do you want to run the program? Please press y or Y to proceed: ";
+		cin>>proceed;
 	}
-	else 
-	{
-		cout<<"This program will not run since you entered y or Y";
-	}
+	
 	return 0;
 }
